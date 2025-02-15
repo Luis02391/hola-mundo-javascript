@@ -21,13 +21,13 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '22'
-
-    - name: Verify Node.js version
-      run: node -v
+        node-version: '16'
 
     - name: Install dependencies
       run: npm install
+
+    - name: Give execute permissions to Jest
+      run: chmod +x ./node_modules/.bin/jest
 
     - name: Run tests
       run: npm test
